@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>Angular Node Express Seed App</title>
 
@@ -18,8 +19,9 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <!--<link href="lib/UIpackages/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />-->
-    <!--<link href="lib/UIpackages/node_modules/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />-->
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/css/bootstrap-slider.css">
     <!--<link href="lib/UIpackages/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet" />-->
     <!--<link href="lib/UIpackages/node_modules/angular-busy/dist/angular-busy.min.css" rel="stylesheet" />-->
     <!--<link href="lib/UIpackages/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet" />-->
@@ -27,87 +29,179 @@
     <!--<link href="style/animate.css" rel="stylesheet" />-->
     <!--<link href="style/style.css" rel="stylesheet" />-->
 
+    <style>
+        .outermostDiv {
+            text-align: center;
+            border: 1px solid lightgray;
+            height: 350px;
+        }
 
+        .outermostDiv.second{
+            width:30%;
+        }
+
+        .sliderContainer {
+            display: inline-block;
+            text-align: center;
+            margin: 20px;
+        }
+    </style>
 
 
 </head>
 
 <body role="document" ng-app="Mod" ng-controller="MainCtrl">
-     
+
     <div class="container">
-        <div>
-               <header>
-				<h1>Sai</h1>{{sai}}
-                </header>
 
-            <div class="row">
-                 
+        <div class="panel panel-default">
+            <div class="panel-heading">GCS - User Preferences</div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <fieldset>
+                            <legend>Sound</legend>
+
+                            <div class="outermostDiv">
+                                <div class="sliderContainer">
+                                    <input type="text" name="sai" data-provide="slider" data-slider-min="1" data-slider-max="30" data-slider-step="1" data-slider-value="3"
+                                        data-slider-tooltip="show" data-slider-orientation="vertical">
+
+                                    <div style="text-align:left; padding:0px 0px; margin-top:30px;">
+                                        Alarm Volume
+                                    </div>
+                                </div>
+                                <div class="sliderContainer">
+                                    <input type="text" name="sai" data-provide="slider" data-slider-min="1" data-slider-max="30" data-slider-step="1" data-slider-value="3"
+                                        data-slider-tooltip="show" data-slider-orientation="vertical">
+
+                                    <div style="text-align:left; padding:0px 0px;margin-top:30px; ">
+                                        Remote Desktop Volume
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div style="text-align:left; padding:4px 20px 20px 20px;">
+                                    <input type="checkbox" /> Mute
+                                </div>
+                            </div>
+
+
+
+                        </fieldset>
+                    </div>
+
+                    <div class="col-md-4">
+                        <fieldset>
+                            <legend>Brightness</legend>
+                            <div class="outermostDiv second">
+                                <div class="sliderContainer">
+                                    <input type="text" name="sai" data-provide="slider" data-slider-min="1" data-slider-max="30" data-slider-step="1" data-slider-value="3"
+                                        data-slider-tooltip="show" data-slider-orientation="vertical">
+
+                                    <div style="text-align:left; padding:0px 0px; margin-top:30px;">
+                                        Brightness
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+
+                </div>
+                <div class="row" style="margin-top:2%;">
+                    <div class="col-md-7 text-center" >
+                        <input type="button" class="btn btn-small btn-primary" value="Reset">
+                    </div>
+                 </div>
+
+
+
             </div>
-            <div class="row viewBody">
-
-                <section ui-view></section>
-
-            </div>
-            <div class="row">
-                 
-                <footer style="height: 40px; border: 0px solid black;">
-                  
-                </footer>
-            </div>
-            <!--Libs-->
-            <!--<script src="jquery/dist/jquery.min.js"></script>-->
-            <!--<script src="lib/UIpackages/node_modules/bootstrap/dist/js/bootstrap.js"></script>-->
-            <script src="angular/angular.js"></script>
-            <!--<script src="lib/angular-ui-router.js"></script>-->
-            <!--<script src="lib/UIpackages/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>-->
-            <!--<script src="lib/UIpackages/node_modules/angular-animate/angular-animate.js"></script>-->
-            <!--<script src="lib/UIpackages/node_modules/angular-busy/dist/angular-busy.min.js"></script>-->
-            <!--<script src="lib/UIpackages/node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>-->
-            <!--<script src="lib/UIpackages/node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>-->
-            <!--<script src="lib/UIpackages/node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>-->
-            <!--<script src="lib/UIpackages/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>-->
-            <!--<script src="lib/UIpackages/node_modules/angular-ui-form-validation/dist/angular-ui-form-validation.js"></script>-->
-
-
-            <!--Libs End-->
-
-
-            <!--App specific-->
-            <script src="app.js"></script>
-            <!--<script src="app.config.js"></script>-->
-            <!--App specific End-->
-
-
-            <!--App directives-->
-            <!--<script src="scripts/common/directives/fileModel.js"></script>-->
-            <!--App directives end-->
-
-
-            <!--Angualar constant-->
-            <!--<script src="scripts/common/services/constants.js"></script>-->
-            <!--Angualar constant End-->
-
-            <!--Angular custom services-->
-            <!--<script src="scripts/common/services/service.js"></script>-->
-            <!--Angular custom services End-->
-
-            <!--Angular custom filteres-->
-            <!--<script src="scripts/common/filters/formatMobileNumber.js"></script>-->
-            <!--Angular custom filteres End-->
-
-            <!--Angular controllers-->
-            <script src="MainCtrl.js"></script>
-            <!--<script src="scripts/controller/LoginCtrl.js"></script>-->
-            <!--<script src="scripts/controller/DashboardCtrl.js"></script>-->
-            <!--<script src="scripts/controller/HeaderCtrl.js"></script>-->
-            <!--<script src="scripts/controller/LineDetailsCtrl.js"></script>-->
-            <!--<script src="scripts/controller/UserManagement.js"></script>-->
-            <!--<script src="scripts/controller/Business/BusinessUserManagementCtrl.js"></script>-->
-            <!--<script src="scripts/controller/FileModalCtrl.js"></script>-->
-            <!--<script src="scripts/controller/LogoutCtrl.js"></script>-->
-            
-            <!--Angular controllers End-->
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--Libs-->
+        <script src="jquery/dist/jquery.min.js"></script>
+        <script src="lib/UIpackages/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="angular/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.8.1/bootstrap-slider.js"></script>
+
+        <!--<script src="lib/UIpackages/node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>-->
+        <!--<script src="lib/UIpackages/node_modules/angular-animate/angular-animate.js"></script>-->
+        <!--<script src="lib/UIpackages/node_modules/angular-busy/dist/angular-busy.min.js"></script>-->
+        <!--<script src="lib/UIpackages/node_modules/ng-file-upload/dist/ng-file-upload-shim.min.js"></script>-->
+        <!--<script src="lib/UIpackages/node_modules/ng-file-upload/dist/ng-file-upload.min.js"></script>-->
+        <script src="angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+        <script src="angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+        <!--<script src="lib/UIpackages/node_modules/angular-ui-form-validation/dist/angular-ui-form-validation.js"></script>-->
+
+
+        <!--Libs End-->
+
+
+        <!--App specific-->
+        <script src="app.js"></script>
+        <!--<script src="app.config.js"></script>-->
+        <!--App specific End-->
+
+
+        <!--App directives-->
+        <!--<script src="scripts/common/directives/fileModel.js"></script>-->
+        <!--App directives end-->
+
+
+        <!--Angualar constant-->
+        <!--<script src="scripts/common/services/constants.js"></script>-->
+        <!--Angualar constant End-->
+
+        <!--Angular custom services-->
+        <!--<script src="scripts/common/services/service.js"></script>-->
+        <!--Angular custom services End-->
+
+        <!--Angular custom filteres-->
+        <!--<script src="scripts/common/filters/formatMobileNumber.js"></script>-->
+        <!--Angular custom filteres End-->
+
+        <!--Angular controllers-->
+        <script src="MainCtrl.js"></script>
+        <!--<script src="scripts/controller/LoginCtrl.js"></script>-->
+        <!--<script src="scripts/controller/DashboardCtrl.js"></script>-->
+        <!--<script src="scripts/controller/HeaderCtrl.js"></script>-->
+        <!--<script src="scripts/controller/LineDetailsCtrl.js"></script>-->
+        <!--<script src="scripts/controller/UserManagement.js"></script>-->
+        <!--<script src="scripts/controller/Business/BusinessUserManagementCtrl.js"></script>-->
+        <!--<script src="scripts/controller/FileModalCtrl.js"></script>-->
+        <!--<script src="scripts/controller/LogoutCtrl.js"></script>-->
+
+        <!--Angular controllers End-->
+
     </div>
 </body>
+
 </html>
